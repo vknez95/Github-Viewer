@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<div>
+  <h1>{{ reponame }}</h1>
+  <div>Issues: {{ repodetails.open_issues }}</div>
+
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="contributor in contributors | orderBy:contributor.login">
+        <td><img ng-src="{{ contributor.avatar_url }}" title="{{ contributor.login }}" /></td>
+        <td>{{ contributor.login }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+<a ng-href="#/main">Back to search</a>
+<a ng-href="#/user/{{ username }}">Back to {{ username }}</a>
